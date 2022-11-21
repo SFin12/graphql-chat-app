@@ -1,17 +1,9 @@
 import "./App.css"
-import { ApolloClient, ApolloProvider, InMemoryCache, useSubscription, gql } from "@apollo/client"
+import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client"
 import { WebSocketLink } from "@apollo/client/link/ws"
-import React, { useEffect, Fragment, useState } from "react";
-import LoginButton from "./components/LoginButton"
-import LogoutButton from "./components/LogoutButton"
-import ProfilePage from "./pages/ProfilePage"
 import { useAuth0 } from "@auth0/auth0-react"
-
 import Main from "./pages/Main"
 
-import DisplayMessages from "./components/DisplayMessages"
-import { PostTextMessage } from "./components/PostTextMessage"
-import SubscribeToLastMessage from "./components/SubscribeToLastMessage";
 
 const createApolloClient = () => {
   return new ApolloClient({
@@ -39,7 +31,6 @@ export default function App() {
       <div>
         <Main user={user}/>
         {/* <ProfilePage /> */}
-        
       </div>
     </ApolloProvider>
   )
