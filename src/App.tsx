@@ -13,7 +13,7 @@ const createApolloClient = () => {
         reconnect: true,
         connectionParams: {
           headers: {
-            "x-hasura-admin-secret": "5d0b2rWTiI5x66G4NXXe01moMYegqye9hkKfGUYXCvRU8fd6t7yt2MumBlnkbkHB",
+            "x-hasura-admin-secret": process.env.REACT_APP_ADMIN_SECRET_PASSCODE,
           },
         },
       },
